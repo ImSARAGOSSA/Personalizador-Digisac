@@ -1,0 +1,224 @@
+    :root {
+      --primary: #99E6FF;
+      --primary-dark: #00BFFF;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #1E293B;
+      --text-sub: #64748B;
+      --border: #E2E8F0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0F172A;
+      --card-bg: #1E293B;
+      --text-main: #F1F5F9;
+      --text-sub: #94A3B8;
+      --border: #334155;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+      width: 340px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header h1 { font-size: 16px; margin: 0; font-weight: 700; letter-spacing: -0.5px; }
+
+    .controls { display: flex; gap: 8px; }
+
+    .icon-btn {
+      cursor: pointer;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .icon-btn:hover { border-color: var(--primary-dark); background: var(--primary); color: #005A70; }
+
+    .main-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #005A70;
+      font-size: 16px;
+    }
+
+    .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-sub); }
+
+    .file-upload {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      background: var(--bg);
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 12px;
+    }
+
+    .file-upload:hover { border-color: var(--primary-dark); background: var(--primary); opacity: 0.2; }
+    .file-upload:hover { background: rgba(153, 230, 255, 0.1); border-color: var(--primary-dark); }
+
+    .file-upload span { font-size: 12px; font-weight: 600; color: var(--text-sub); }
+    .file-upload input { position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+
+    .range-group { margin-top: 8px; }
+    .range-label { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+    
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      appearance: none;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      background: var(--primary-dark);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .footer {
+      padding: 0 16px 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-save { background: var(--primary); color: #005A70; box-shadow: 0 4px 10px rgba(153, 230, 255, 0.3); }
+    .btn-feedback { background: var(--card-bg); color: var(--text-main); border: 1px solid var(--border); }
+    
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .btn:active { transform: translateY(0); }
+
+    #overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      flex-direction: column;
+    }
+
+    [data-theme="dark"] #overlay { background: rgba(15, 23, 42, 0.6); }
+
+    .spinner {
+      width: 40px; height: 40px;
+      border: 4px solid var(--primary);
+      border-top: 4px solid var(--primary-dark);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .check-anim {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    .check-circle {
+      width: 60px; height: 60px;
+      background: #22C55E;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    #langMenu {
+      position: absolute;
+      top: 56px; right: 60px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      z-index: 10;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .lang-opt { padding: 10px 20px; font-size: 13px; cursor: pointer; font-weight: 600; }
+    .lang-opt:hover { background: var(--primary); color: #005A70; }

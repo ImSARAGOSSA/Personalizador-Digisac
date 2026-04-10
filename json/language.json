@@ -1,0 +1,35 @@
+{
+  "pt": {
+    "title": "Configurações",
+    "background": "Fundo",
+    "logo": "Logo",
+    "opacity": "Opacidade",
+    "size": "Tamanho",
+    "save": "SALVAR",
+    "feedback": "FEEDBACK",
+    "saved": "SALVO!",
+    "applying": "APLICANDO..."
+  },
+  "es": {
+    "title": "Ajustes",
+    "background": "Fondo",
+    "logo": "Logo",
+    "opacity": "Opacidad",
+    "size": "Tamaño",
+    "save": "AHORRAR",
+    "feedback": "COMENTARIO",
+    "saved": "SALVADO!",
+    "applying": "APLICANDO..."
+  },
+  "en": {
+    "title": "Settings",
+    "background": "Background",
+    "logo": "Logo",
+    "opacity": "Opacity",
+    "size": "Size",
+    "save": "SAVE",
+    "feedback": "FEEDBACK",
+    "saved": "SAVED!",
+    "applying": "APPLYING..."
+  }
+}

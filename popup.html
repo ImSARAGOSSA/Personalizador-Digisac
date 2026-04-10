@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <div id="overlay">
+    <div id="spinner" class="spinner"></div>
+    <div id="checkArea" class="check-anim">
+      <div class="check-circle">✓</div>
+      <span id="statusText" style="font-weight: 800; font-size: 18px; color: #22C55E;" data-i18n="saved">SALVO!</span>
+    </div>
+  </div>
+
+  <div class="header">
+    <h1 data-i18n="title">Configurações</h1>
+    <div class="controls">
+      <button id="langBtn" class="icon-btn">🌐</button>
+      <button id="themeToggle" class="icon-btn">🌓</button>
+    </div>
+  </div>
+
+  <div id="langMenu">
+    <div class="lang-opt" data-lang="pt">Português</div>
+    <div class="lang-opt" data-lang="es">Español</div>
+    <div class="lang-opt" data-lang="en">English</div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🖼️</div>
+        <span class="card-title" data-i18n="background">Fundo</span>
+      </div>
+      <div class="file-upload">
+        <span id="bgFileName">Escolher Imagem</span>
+        <input type="file" id="fileInput" accept="image/*">
+      </div>
+      <div class="range-group">
+        <div class="range-label">
+          <span data-i18n="opacity">Opacidade</span>
+          <span id="opacityVal">70%</span>
+        </div>
+        <input type="range" id="overlayRange" min="0" max="0.95" step="0.01" value="0.7">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🏷️</div>
+        <span class="card-title" data-i18n="logo">Logo</span>
+      </div>
+      <div class="file-upload">
+        <span id="logoFileName">Escolher Logo</span>
+        <input type="file" id="logoInput" accept="image/*">
+      </div>
+      <div class="range-group">
+        <div class="range-label">
+          <span data-i18n="size">Tamanho</span>
+          <span id="logoSizeVal">32px</span>
+        </div>
+        <input type="range" id="logoSizeRange" min="20" max="120" step="1" value="32">
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button id="btnSave" class="btn btn-save">
+      <span data-i18n="save">SALVAR</span>
+    </button>
+    <button id="btnFeedback" class="btn btn-feedback">
+      <span data-i18n="feedback">FEEDBACK</span>
+    </button>
+  </div>
+
+  <script src="./js/popup.js"></script>
+</body>
+</html>
