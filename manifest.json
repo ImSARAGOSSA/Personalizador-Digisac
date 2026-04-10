@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Personalizador Digisac",
+  "name": "Personalizador  Digisac",
   "version": "1.0",
   "permissions": ["storage", "scripting", "activeTab"],
   "host_permissions": ["https://*.digisac.app/*"],
